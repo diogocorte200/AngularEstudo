@@ -1,0 +1,226 @@
+<form #contatoForm="ngForm" class="form-inline">
+  <tr *ngFor = "let c of produto">
+      <div class="col-md-2">
+          <div class="form-group">
+              <label>Código</label>
+              <input name="clienteId"
+                     class="form-control"
+                     [(ngModel)]="c.clienteId"
+                     required>
+          </div>
+      </div>
+
+      <div class="col-md-2">
+          <div class="form-group">
+              <label>Nome</label>
+              <input name="Nome"
+                     class="form-control"
+                     [(ngModel)]="c.nome"
+                     required>
+          </div>
+      </div>
+      <div class="col-md-2">
+          <div class="form-group">
+              <label>Sobrenome</label>
+              <input name="Sobrenome"
+                     class="form-control"
+                     [(ngModel)]="c.sobrenome"
+                     required>
+          </div>
+      </div>
+      <div class="col-md-2">
+          <div class="form-group">
+              <label>E-mail</label>
+              <input name="email"
+                     class="form-control"
+                     [(ngModel)]="c.email"
+                     required>
+          </div>
+      </div>
+      <div class="col-md-2">
+          <div class="form-group">
+              <label>Data Cadastro</label>
+              <input name="dataCadastro"
+                     class="form-control"
+                     [(ngModel)]="c.dataCadastro"
+                     required>
+          </div>
+      </div>
+      <div class="col-md-2">
+          <div class="form-group">
+              <label>Status</label>
+              <input name="moedaPara"
+                     class="form-control"
+                     [(ngModel)]="c.ativo"
+                     required>
+          </div>
+      </div>
+      <button class="btn btn-success" (click)="onFormSubmit(c)" [routerLink]="['/products']">Editar</button>        
+        </tr>
+  </form> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<!-- <form #contatoForm="ngForm" class="form-inline">
+    <tr *ngFor = "let c of product">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Código</label>
+                <input name="clienteId"
+                       class="form-control"
+                       [(ngModel)]="c.clienteId"
+                       required>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Nome</label>
+                <input name="Nome"
+                       class="form-control"
+                       [(ngModel)]="c.nome"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Sobrenome</label>
+                <input name="Sobrenome"
+                       class="form-control"
+                       [(ngModel)]="c.sobrenome"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>E-mail</label>
+                <input name="email"
+                       class="form-control"
+                       [(ngModel)]="c.email"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Data Cadastro</label>
+                <input name="dataCadastro"
+                       class="form-control"
+                       [(ngModel)]="c.dataCadastro"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Status</label>
+                <input name="moedaPara"
+                       class="form-control"
+                       [(ngModel)]="c.ativo"
+                       required>
+            </div>
+        </div>
+        <button class="btn btn-success" [routerLink]="['/product-edit', c.clienteId]">Detalhes</button>        
+        -->
+                <!-- <div class="form-group text-center">
+            <input type="submit"
+                   class="btn btn-success"
+                   data-toggle="modal"
+                   (click)="atualizar()"
+                   value="Atualizar"
+                   [disabled]="!contatoForm.form.valid">
+            <a [routerLink]="['/products']"
+               class="btn btn-warning">
+                <span class="glyphicon glyphicon-chevron-left"
+                      aria-hidden="true"></span> Voltar
+            </a>
+        </div> -->
+
+<!--         
+    </tr>
+    </form> -->
+
+
+<!--     
+
+
+<p>
+  product-edit works!
+</p>
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" (click)="productDetails()"><mat-icon>info</mat-icon></a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Product Name" formControlName="nome"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('nome').valid && productForm.get('nome').touched">Please enter Product Name</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Product Desc" formControlName="email"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('email').valid && productForm.get('email').touched">Please enter Product Description</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Product Price" formControlName="clienteId"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('clienteId').valid && productForm.get('clienteId').touched">Please enter Product Price</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!productForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div> -->

@@ -1,0 +1,62 @@
+<form #contatoForm="ngForm" class="form-inline">
+    <tr *ngFor = "let c of product">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Código</label>
+                <input name="clienteId"
+                       class="form-control"
+                       [(ngModel)]="c.clienteId"
+                       required>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Nome</label>
+                <input name="Nome"
+                       class="form-control"
+                       [(ngModel)]="c.nome"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Sobrenome</label>
+                <input name="Sobrenome"
+                       class="form-control"
+                       [(ngModel)]="c.sobrenome"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>E-mail</label>
+                <input name="email"
+                       class="form-control"
+                       [(ngModel)]="c.email"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Data Cadastro</label>
+                <input name="dataCadastro"
+                       class="form-control"
+                       [(ngModel)]="c.dataCadastro"
+                       required>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Status</label>
+                <input name="ativo"
+                       class="form-control"
+                       [(ngModel)]="c.ativo"
+                       required>
+            </div>
+        </div>
+          <button class="btn btn-success" (click)="getProductDetails(c.clienteId)" [routerLink]="['/product-edit/', c.clienteId]">Editar</button>  
+         <button class="btn btn-danger" (click)="onDelete(c.clienteId); $event.stopPropagation()">Deletar</button>
+        </tr>
+    </form> 
+

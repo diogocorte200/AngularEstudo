@@ -1,0 +1,89 @@
+<!-- <div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/products']"><mat-icon>list</mat-icon></a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nome" formControlName="nome"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('nome').valid && productForm.get('nome').touched">Please enter Product Name</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="E-mail" formControlName="email"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('email').valid && productForm.get('email').touched">Please enter Product Description</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Sobrenome" formControlName="sobrenome"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('sobrenome').valid && productForm.get('sobrenome').touched">Please enter Product Sobrenome</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Status" formControlName="ativo"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('ativo').valid && productForm.get('ativo').touched">Please enter Product status</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Data Cadastro" formControlName="dataCadastro"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!productForm.get('dataCadastro').valid && productForm.get('dataCadastro').touched">Please enter Product data</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!productForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div> -->
+
+<div>
+    <h3>Adicionar Novo Produto</h3>
+  </div>
+  <form class="example-container" [formGroup]="productForm" (ngSubmit)="addProdutoNovo(productForm.value)">
+      
+    <div class="col-md-2">
+        <div class="form-group">
+            <label>Nome</label>
+            <input name="nome" class="form-control" formControlName="nome">
+         </div>
+      </div>
+      <div class="col-md-2">
+          <div class="form-group">
+              <label>Sobrenome</label>
+              <input name="sobrenome" class="form-control" formControlName="sobrenome">
+           </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>E-mail</label>
+                <input name="email" class="form-control" formControlName="email">
+             </div>
+          </div>
+          <div class="col-md-2">
+              <div class="form-group">
+                  <label>Status</label>
+                  <input name="ativo" class="form-control" formControlName="ativo">
+               </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Data Cadastro</label>
+                    <input name="dataCadastro" class="form-control" formControlName="dataCadastro">
+                 </div>
+              </div>
+    <button type="submit" [disabled]="!productForm.valid" mat-button color="primary" >Adicionar</button>
+  </form>
